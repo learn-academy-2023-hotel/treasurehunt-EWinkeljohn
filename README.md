@@ -78,6 +78,13 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     - created/styled a button that invokes restartClick funciton when clicked
 
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
+    - branch: counter
+    - created useState variable for counter with default value of 5
+    - declared variable that subtracts state by 1
+    - input state function logic into Square.js to update when squares are clicked
+    - input state function logic in PLay Again button to revert to 5 back when clicked
+    - input logic into if/else statements to only count down when fairy/troll not selected
+    
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
 - As a user, I can see a message stating that I lost the game by selecting the square that contains the bomb.
 - As a user, I cannot continue to play the game after I win or lose.

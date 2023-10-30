@@ -23,9 +23,13 @@ const App = () => {
   const [enemyLocation, setEnemyLocation] = useState(Math.floor(Math.random() * board.length))
   console.log("Enenmy Location: ", enemyLocation)
 
+  const [counter, setCounter] = useState(5)
+
   const handleSquareClick = (clickedSquareIndex) => {
     // varibale holding copy of current state
     let updatedBoard = [...board]
+    let updatedCounter = counter - 1
+    // decalred update variable to for counter state value
     // set condition for if treasure location is same as clicked square show a fairy
     if(clickedSquareIndex === treasureLocation) {
       updatedBoard[clickedSquareIndex] = "🧚‍♀️"
@@ -33,12 +37,18 @@ const App = () => {
       updatedBoard[clickedSquareIndex] = "🧌"
     } else if(clickedSquareIndex %2 !== 0) {
       updatedBoard[clickedSquareIndex] = "🪵"
+      setCounter(updatedCounter)
+      // used state function and variable to update state value
     } else {
       // use index to update current square's value with an emoji using bracket notation
       updatedBoard[clickedSquareIndex] = "🍄"
       // update state with new board
+      setCounter(updatedCounter)
     }
     setBoard(updatedBoard)
+    // let updatedCounter = counter - 1
+    // decalred updated variable to for state value
+    // used state function and variable to update state value
   }
     // set return outside of curly braces because it is the same regardless of the condition
 
@@ -48,6 +58,8 @@ const App = () => {
   setEnemyLocation(Math.floor(Math.random() * board.length))
   // replace enemy and fairy locations along with reset
   setTreasureLocation(Math.floor(Math.random() * board.length))
+  setCounter(5)
+  // added counter logic to restartClick function to revert back to 5 when Play Again is clicked
 }
 
   return (
@@ -67,6 +79,7 @@ const App = () => {
       </div>
       <button className="restart" onClick={restartClick}>Play Again!</button>
       {/* invoke restartClick function within button tag */}
+      <button className="counter">{counter}</button>
       </>
       )
     }
