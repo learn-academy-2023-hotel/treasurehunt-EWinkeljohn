@@ -16,7 +16,12 @@ const App = () => {
   ])
 
   const handleSquareClick = (clickedSquareIndex) => {
-    alert(clickedSquareIndex)
+    // varibale holding copy of current state
+    let updatedBoard = [...board]
+    // use index to update current square's value with an emoji using bracket notation
+    updatedBoard[clickedSquareIndex] = "🌵"
+    // update state with new board
+    setBoard(updatedBoard)
   }
 
   return (
