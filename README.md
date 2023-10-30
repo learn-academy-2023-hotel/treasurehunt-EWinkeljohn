@@ -61,6 +61,13 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     - passed handleSquareClick to Square to get the index back to App.js using functional props
 
 - As a user, when I click on one of the question marks, a tree emoji appears instead of the alert.
+
+    -branch: emoji
+    - deleted alert from App.js
+    - used spread operator to copy the current board
+    - updated value of square at particular index to be a tree when clicked
+
+
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
 - As a user, I can click on a “Play Again” button that will restart the game.
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
