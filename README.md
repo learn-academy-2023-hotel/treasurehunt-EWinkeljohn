@@ -69,7 +69,14 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 
 
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
+    - branch: treasure-bomb
+    - made conditonal statements for winning, losing, and neutral squares using the use states
+
 - As a user, I can click on a “Play Again” button that will restart the game.
+    - branch: treasure-bomb
+    - create function restartClick that changes all squares values to default and resets enemy/fairy locations
+    - created/styled a button that invokes restartClick funciton when clicked
+
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
 - As a user, I can see a message stating that I lost the game by selecting the square that contains the bomb.
