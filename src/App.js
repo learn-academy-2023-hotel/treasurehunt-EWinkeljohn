@@ -21,11 +21,14 @@ const App = () => {
   console.log("treasure location: ", treasureLocation)
 
   const [enemyLocation, setEnemyLocation] = useState(Math.floor(Math.random() * board.length))
-  console.log("Enenmy Location: ", enemyLocation)
+  console.log("Enemy Location: ", enemyLocation)
 
   const [counter, setCounter] = useState(5)
 
   const handleSquareClick = (clickedSquareIndex) => {
+    while (treasureLocation === enemyLocation){
+      return handleSquareClick()
+    }
     // varibale holding copy of current state
     let updatedBoard = [...board]
     let updatedCounter = counter - 1
@@ -33,8 +36,10 @@ const App = () => {
     // set condition for if treasure location is same as clicked square show a fairy
     if(clickedSquareIndex === treasureLocation) {
       updatedBoard[clickedSquareIndex] = "🧚‍♀️"
+      setTimeout(function() {alert("✨You found her!✨ I hope you brought her a snack 🍬")}, 100)
     } else if(clickedSquareIndex === enemyLocation) {
       updatedBoard[clickedSquareIndex] = "🧌"
+      setTimeout(function() {alert("🛤️ The troll found you lurking near his bridge...RUN! 🏃‍♂️")}, 100)
     } else if(clickedSquareIndex %2 !== 0) {
       updatedBoard[clickedSquareIndex] = "🪵"
       setCounter(updatedCounter)
